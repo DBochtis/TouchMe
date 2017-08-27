@@ -3,87 +3,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_activity_background"
     tools:context="com.example.dimitris.touchmedemo.MainActivity">
 
     <RelativeLayout
-        android:id="@+id/buttonRel"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/green_button"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
 
-    <RelativeLayout
-        android:id="@+id/lvl1Rel"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="10dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:gravity="center"
-        android:background="#c1c1c1">
+        <RelativeLayout
+            android:id="@+id/timeRel"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:background="@drawable/base_rectangle">
 
-        <TextView
+            <TextView
+                android:id="@+id/timeTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_activity_time"
+                android:textColor="#232323"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/scoreRel"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:background="@drawable/base_rectangle">
+
+            <TextView
+                android:id="@+id/scoreTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_activity_score"
+                android:textColor="#232323"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/buttonRel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Level 1"
-            android:textColor="#232323"
-            android:textSize="20sp"/>
-    </RelativeLayout>
+            android:layout_centerInParent="true"
+            android:background="@drawable/green_button"/>
 
-    <RelativeLayout
-        android:id="@+id/lvl2Rel"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:gravity="center"
-        android:background="#c1c1c1">
+        <RelativeLayout
+            android:id="@+id/startRel"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/buttonRel"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:background="@drawable/base_rectangle">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Level 2"
-            android:textColor="#232323"
-            android:textSize="20sp"/>
-    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_activity_start"
+                android:textColor="#232323"
+                android:textSize="20sp"/>
+        </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/lvl3Rel"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:gravity="center"
-        android:background="#c1c1c1">
+        <RelativeLayout
+            android:id="@+id/stopRel"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:background="#c1c1c1">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Level 3"
-            android:textColor="#232323"
-            android:textSize="20sp"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/stopRel"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="80dp"
-        android:gravity="center"
-        android:background="#c1c1c1">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Stop"
-            android:textColor="#232323"
-            android:textSize="20sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stop"
+                android:textColor="#232323"
+                android:textSize="20sp"/>
+        </RelativeLayout>
     </RelativeLayout>
 
 </RelativeLayout>

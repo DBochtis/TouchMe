@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TouchMeDemo</string>
+
+    <!-- Main Activity -->
+    <string name="main_activity_start">Start</string>
+    <string name="main_activity_time">Time:</string>
+    <string name="main_activity_score">Score:</string>
 </resources>

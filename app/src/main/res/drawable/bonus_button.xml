@@ -3,22 +3,33 @@
 
     <item>
         <shape android:shape="oval">
-            <padding android:bottom="3dp"
-                android:left="3dp"/>
+            <padding
+                android:bottom="12dp"
+                android:left="12dp"
+                android:right="12dp"
+                android:top="12dp"/>
             <size
                 android:width="200dp"
                 android:height="200dp" />
-            <solid android:color="#ccac00"/>
+            <solid android:color="#99ABA40B"/>
             <corners android:radius="30dp" />
+            <stroke
+                android:width="5dp"
+                android:color="#000000" />
         </shape>
     </item>
 
     <item>
         <shape android:shape="oval">
+            <gradient
+                android:angle="90"
+                android:centerColor="#ABA40B"
+                android:endColor="#ECE311"
+                android:startColor="#686406"
+                android:type="linear" />
             <size
                 android:width="200dp"
                 android:height="200dp" />
-            <solid android:color="#ffd700"/>
             <corners android:radius="30dp"/>
         </shape>
     </item>
