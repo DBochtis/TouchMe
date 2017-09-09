@@ -1,5 +1,6 @@
 package com.example.dimitris.touchmedemo;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
@@ -20,20 +21,18 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private boolean allowed = false;
-    private int counter = 0;
-    private CountDownTimer timer;
-
-    @BindView(R.id.buttonRel)
-    RelativeLayout buttonRel;
-    @BindView(R.id.startRel)
-    RelativeLayout startRel;
-    @BindView(R.id.stopRel)
-    RelativeLayout stopRel;
-    @BindView(R.id.timeTxtView)
-    TextView timeTxtView;
-    @BindView(R.id.scoreTxtView)
-    TextView scoreTxtView;
+    @BindView(R.id.onePlayerRel)
+    RelativeLayout onePlayerRell;
+    @BindView(R.id.twoPlayersRel)
+    RelativeLayout twoPlayersRel;
+    @BindView(R.id.exitRel)
+    RelativeLayout exitRel;
+    @BindView(R.id.onePlayerTxtView)
+    TextView onePlayerTxtView;
+    @BindView(R.id.twoPlayersTxtView)
+    TextView twoPlayersTxtView;
+    @BindView(R.id.exitTxtView)
+    TextView exitTxtView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,86 +40,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        timeTxtView.setText(getResources().getString(R.string.main_activity_time) + " " + 30 + "\"");
-        scoreTxtView.setText(getResources().getString(R.string.main_activity_score) + " " + 0);
-
-        timer = new CountDownTimer(30000, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-                timeTxtView.setText(getResources().getString(R.string.main_activity_time) + " " + millisUntilFinished / 1000 + "\"");
-            }
-
-            public void onFinish() {
-                timeTxtView.setText(getResources().getString(R.string.main_activity_time) + " " + 0);
-                allowed = false;
-            }
-
-        };
-
-        startRel.setOnClickListener(this);
-        stopRel.setOnClickListener(this);
-        buttonRel.setOnClickListener(this);
-    }
-
-
-    final int[] drawablearray = new int[]{R.drawable.red_button, R.drawable.red_button, R.drawable.red_button, R.drawable.red_button,
-            R.drawable.red_button, R.drawable.green_button, R.drawable.green_button, R.drawable.green_button, R.drawable.bonus_button};
-
-    private void changeBackground(final int time) {
-        if (allowed) {
-            new Handler().postDelayed(new Runnable() {
-                public void run() {
-                    Random r = new Random();
-                    int tmp = r.nextInt(9);
-                    changeBackgroundDrawable(tmp);
-                    changeBackground(time);
-                }
-            }, time);
-        }
-    }
-
-    private void changeBackgroundDrawable(int position) {
-        buttonRel.setBackground(getDrawable(drawablearray[position]));
+        onePlayerRell.setOnClickListener(this);
+        twoPlayersRel.setOnClickListener(this);
+        exitRel.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.startRel:
-                counter = 0;
-                timer.start();
-                allowed = true;
-                changeBackground(800);
+            case R.id.onePlayerRel:
+                Intent intent1 = new Intent(this, PlayActivity.class);
+                intent1.putExtra("players", 1);
+                startActivity(intent1);
                 break;
-//            case R.id.lvl2Rel:
-//                allowed = true;
-//                changeBackground(500);
-//                break;
-//            case R.id.lvl3Rel:
-//                allowed = true;
-//                changeBackground(300);
-//                break;
-            case R.id.stopRel:
-                allowed = false;
-                timer.cancel();
+            case R.id.twoPlayersRel:
+                Intent intent2 = new Intent(this, PlayActivity.class);
+                intent2.putExtra("players", 2);
+                startActivity(intent2);
                 break;
-            case R.id.buttonRel:
-                if (allowed) {
-                    Drawable drawable = buttonRel.getBackground();
-                    Drawable green = getDrawable(R.drawable.green_button);
-                    Drawable red = getDrawable(R.drawable.red_button);
-                    Drawable bonus = getDrawable(R.drawable.bonus_button);
-                    if (areDrawablesIdentical(drawable, green)) {
-                        counter++;
-                        scoreTxtView.setText(getResources().getString(R.string.main_activity_score) + " " + counter);
-                    } else if (areDrawablesIdentical(drawable, red)) {
-                        counter--;
-                        scoreTxtView.setText(getResources().getString(R.string.main_activity_score) + " " + counter);
-                    } else if (areDrawablesIdentical(drawable, bonus)){
-                        counter = counter + 5;
-                        scoreTxtView.setText(getResources().getString(R.string.main_activity_score) + " " + counter);
-                    }
-                }
+            case R.id.exitRel:
+                finish();
                 break;
         }
     }

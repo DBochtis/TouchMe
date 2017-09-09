@@ -2,7 +2,12 @@
     <string name="app_name">TouchMeDemo</string>
 
     <!-- Main Activity -->
-    <string name="main_activity_start">Start</string>
-    <string name="main_activity_time">Time:</string>
-    <string name="main_activity_score">Score:</string>
+    <string name="main_activity_one_player">1 player</string>
+    <string name="main_activity_two_players">2 players</string>
+    <string name="main_activity_exit">exit</string>
+
+    <!-- Play Activity -->
+    <string name="play_activity_start">Start</string>
+    <string name="play_activity_time">Time:</string>
+    <string name="play_activity_score">Score:</string>
 </resources>
