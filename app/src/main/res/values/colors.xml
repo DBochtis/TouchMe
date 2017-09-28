@@ -4,13 +4,32 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <!-- App -->
+    <color name="divider">#515151</color>
+
     <!-- Main Activity -->
     <color name="main_activity_background">#FFFFFF</color>
     <color name="main_activity_green">#2FA70B</color>
     <color name="main_activity_blue">#0D93D4</color>
     <color name="main_activity_red">#D83208</color>
-    <color name="main_activity_primary_text">#232323</color>
+    <color name="main_activity_orange">#F27207</color>
+    <color name="main_activity_primary_text">#FFFFFF</color>
+    <color name="main_activity_secondary_text">#232323</color>
 
     <!-- Play Activity -->
-    <color name="play_activity_background">#FAF4BD</color>
+    <color name="play_activity_background">#FFFFFF</color>
+    <color name="play_activity_primary_text">#FFFFFF</color>
+    <color name="play_activity_secondary_text">#232323</color>
+    <color name="play_activity_blue">#0D93D4</color>
+
+    <!-- Play 2 Activity -->
+    <color name="play2_activity_background">#FFFFFF</color>
+    <color name="play2_activity_primary_text">#FFFFFF</color>
+    <color name="play2_activity_secondary_text">#232323</color>
+    <color name="play2_activity_blue">#0D93D4</color>
+
+    <!-- About Activity -->
+    <color name="about_activity_background">#FFFFFF</color>
+    <color name="about_activity_primary_text">#232323</color>
+
 </resources>

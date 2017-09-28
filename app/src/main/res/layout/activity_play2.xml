@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/play2_activity_background"
+    tools:context="com.example.dimitris.touchmedemo.activity.Play2Activity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/startRel"
+        android:padding="20dp">
+
+        <RelativeLayout
+            android:id="@+id/timeScoreRel1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/timeRel1"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/play2_activity_blue"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/timeTxtView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/play2_activity_time"
+                    android:textColor="@color/play2_activity_primary_text"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/scoreRel1"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:background="@color/play2_activity_blue"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/scoreTxtView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/play2_activity_score"
+                    android:textColor="@color/play2_activity_primary_text"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/buttonRel1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/green_button" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/startRel"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true"
+        android:background="@color/play2_activity_blue"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/startTxtView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/play2_activity_start"
+            android:textColor="@color/play2_activity_primary_text"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/startRel"
+        android:rotation="180"
+        android:padding="20dp">
+
+        <RelativeLayout
+            android:id="@+id/timeScoreRel2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/timeRel2"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/play2_activity_blue"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/timeTxtView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/play2_activity_time"
+                    android:textColor="@color/play2_activity_primary_text"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/scoreRel2"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:background="@color/play2_activity_blue"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/scoreTxtView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/play2_activity_score"
+                    android:textColor="@color/play2_activity_primary_text"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/buttonRel2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/green_button" />
+    </RelativeLayout>
+
+</RelativeLayout>

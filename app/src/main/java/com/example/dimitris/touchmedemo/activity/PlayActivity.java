@@ -1,4 +1,4 @@
-package com.example.dimitris.touchmedemo;
+package com.example.dimitris.touchmedemo.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,6 +15,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dimitris.touchmedemo.R;
+import com.example.dimitris.touchmedemo.helper.TypefacesHelper;
+
 import java.util.Random;
 
 import butterknife.BindView;
@@ -23,27 +26,28 @@ import butterknife.ButterKnife;
 public class PlayActivity extends FragmentActivity implements View.OnClickListener {
 
     private boolean allowed = false;
-    private int counter = 0, players;
+    private int counter = 0;
     private CountDownTimer timer;
 
     @BindView(R.id.buttonRel)
     RelativeLayout buttonRel;
     @BindView(R.id.startRel)
     RelativeLayout startRel;
-    @BindView(R.id.stopRel)
-    RelativeLayout stopRel;
     @BindView(R.id.timeTxtView)
     TextView timeTxtView;
     @BindView(R.id.scoreTxtView)
     TextView scoreTxtView;
+    @BindView(R.id.levelTxtView)
+    TextView levelTxtView;
+    @BindView(R.id.startTxtView)
+    TextView startTxtView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
         ButterKnife.bind(this);
-
-        handleIntent();
 
         setupViews();
     }
@@ -86,10 +90,6 @@ public class PlayActivity extends FragmentActivity implements View.OnClickListen
 //                allowed = true;
 //                changeBackground(300);
 //                break;
-            case R.id.stopRel:
-                allowed = false;
-                timer.cancel();
-                break;
             case R.id.buttonRel:
                 if (allowed) {
                     Drawable drawable = buttonRel.getBackground();
@@ -143,12 +143,12 @@ public class PlayActivity extends FragmentActivity implements View.OnClickListen
         return result;
     }
 
-    private void handleIntent(){
-        Intent intent = getIntent();
-        players = intent.getIntExtra("players", 1);
-    }
-
     private void setupViews(){
+        levelTxtView.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
+        timeTxtView.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
+        scoreTxtView.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
+        startTxtView.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
+
         timeTxtView.setText(getResources().getString(R.string.play_activity_time) + " " + 30 + "\"");
         scoreTxtView.setText(getResources().getString(R.string.play_activity_score) + " " + 0);
 
@@ -166,7 +166,6 @@ public class PlayActivity extends FragmentActivity implements View.OnClickListen
         };
 
         startRel.setOnClickListener(this);
-        stopRel.setOnClickListener(this);
         buttonRel.setOnClickListener(this);
     }
 }

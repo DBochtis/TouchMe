@@ -9,9 +9,9 @@
                 android:right="12dp"
                 android:top="12dp"/>
             <size
-                android:width="200dp"
-                android:height="200dp" />
-            <solid android:color="#99009909"/>
+                android:width="250dp"
+                android:height="250dp" />
+            <solid android:color="#00cc00"/>
             <corners android:radius="30dp" />
             <stroke
                 android:width="5dp"
@@ -19,19 +19,19 @@
         </shape>
     </item>
 
-    <item>
-        <shape android:shape="oval">
-            <gradient
-                android:angle="90"
-                android:centerColor="#009909"
-                android:endColor="#00cc00"
-                android:startColor="#005E06"
-                android:type="linear" />
-            <size
-                android:width="200dp"
-                android:height="200dp" />
-            <corners android:radius="30dp"/>
-        </shape>
-    </item>
+    <!--<item>-->
+        <!--<shape android:shape="oval">-->
+            <!--<gradient-->
+                <!--android:angle="90"-->
+                <!--android:centerColor="#009909"-->
+                <!--android:endColor="#00cc00"-->
+                <!--android:startColor="#005E06"-->
+                <!--android:type="linear" />-->
+            <!--<size-->
+                <!--android:width="200dp"-->
+                <!--android:height="200dp" />-->
+            <!--<corners android:radius="30dp"/>-->
+        <!--</shape>-->
+    <!--</item>-->
 
 </layer-list>

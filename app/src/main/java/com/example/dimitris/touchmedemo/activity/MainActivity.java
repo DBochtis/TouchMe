@@ -1,28 +1,32 @@
-package com.example.dimitris.touchmedemo;
+package com.example.dimitris.touchmedemo.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.CountDownTimer;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Random;
+import com.example.dimitris.touchmedemo.R;
+import com.example.dimitris.touchmedemo.helper.TypefacesHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    @BindView(R.id.titleTxtView)
+    TextView titleTxtView;
     @BindView(R.id.onePlayerRel)
-    RelativeLayout onePlayerRell;
+    RelativeLayout onePlayerRel;
     @BindView(R.id.twoPlayersRel)
     RelativeLayout twoPlayersRel;
     @BindView(R.id.exitRel)
@@ -40,9 +44,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        onePlayerRell.setOnClickListener(this);
+        titleTxtView.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_SF_B));
+        onePlayerTxtView.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
+        twoPlayersTxtView.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
+        exitTxtView.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
+
+        onePlayerRel.setOnClickListener(this);
         twoPlayersRel.setOnClickListener(this);
         exitRel.setOnClickListener(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_about:
+                Intent intent = new Intent(this, AboutActivity.class);
+                startActivity(intent);
+                break;
+        }
+        return true;
     }
 
     @Override
@@ -50,12 +77,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.onePlayerRel:
                 Intent intent1 = new Intent(this, PlayActivity.class);
-                intent1.putExtra("players", 1);
                 startActivity(intent1);
                 break;
             case R.id.twoPlayersRel:
-                Intent intent2 = new Intent(this, PlayActivity.class);
-                intent2.putExtra("players", 2);
+                Intent intent2 = new Intent(this, Play2Activity.class);
                 startActivity(intent2);
                 break;
             case R.id.exitRel:

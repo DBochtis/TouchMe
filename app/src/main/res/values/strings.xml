@@ -1,13 +1,27 @@
 <resources>
     <string name="app_name">TouchMeDemo</string>
+    <string name="title">Touch me!</string>
 
     <!-- Main Activity -->
     <string name="main_activity_one_player">1 player</string>
     <string name="main_activity_two_players">2 players</string>
     <string name="main_activity_exit">exit</string>
+    <string name="main_activity_about">About</string>
 
     <!-- Play Activity -->
     <string name="play_activity_start">Start</string>
     <string name="play_activity_time">Time:</string>
     <string name="play_activity_score">Score:</string>
+    <string name="play_activity_level">Level:</string>
+
+    <!-- Play2 Activity -->
+    <string name="play2_activity_start">Start</string>
+    <string name="play2_activity_time">Time:</string>
+    <string name="play2_activity_score">Score:</string>
+    <string name="play2_activity_level">Level:</string>
+
+    <!-- About Activity -->
+    <string name="about_activity_title">About</string>
+    <string name="about_activity_version">Version</string>
+
 </resources>

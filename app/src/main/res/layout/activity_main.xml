@@ -4,27 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_activity_background"
-    tools:context="com.example.dimitris.touchmedemo.MainActivity">
+    tools:context="com.example.dimitris.touchmedemo.activity.MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_vertical">
 
-        <ImageView
+        <RelativeLayout
+            android:id="@+id/topRel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/green_button"/>
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/base_button"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/titleTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:textColor="@color/main_activity_secondary_text"
+                android:textSize="30dp" />
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/onePlayerRel"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:background="@color/main_activity_green">
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/topRel"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:background="@color/main_activity_green"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/onePlayerTxtView"
@@ -32,16 +44,18 @@
                 android:layout_height="wrap_content"
                 android:text="@string/main_activity_one_player"
                 android:textColor="@color/main_activity_primary_text"
-                android:textSize="20sp"/>
+                android:textSize="30sp" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/twoPlayersRel"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/onePlayerRel"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:background="@color/main_activity_blue">
+            android:background="@color/main_activity_blue"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/twoPlayersTxtView"
@@ -49,16 +63,18 @@
                 android:layout_height="wrap_content"
                 android:text="@string/main_activity_two_players"
                 android:textColor="@color/main_activity_primary_text"
-                android:textSize="20sp"/>
+                android:textSize="30sp" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/exitRel"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/twoPlayersRel"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:background="@color/main_activity_red">
+            android:background="@color/main_activity_red"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/exitTxtView"
@@ -66,9 +82,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/main_activity_exit"
                 android:textColor="@color/main_activity_primary_text"
-                android:textSize="20sp"/>
+                android:textSize="30sp" />
         </RelativeLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>
