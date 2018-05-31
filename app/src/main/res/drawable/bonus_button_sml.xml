@@ -9,8 +9,8 @@
                 android:right="12dp"
                 android:top="12dp"/>
             <size
-                android:width="250dp"
-                android:height="250dp" />
+                android:width="150dp"
+                android:height="150dp" />
             <solid android:color="#673ab7"/>
             <corners android:radius="30dp" />
             <stroke
@@ -20,18 +20,18 @@
     </item>
 
     <!--<item>-->
-        <!--<shape android:shape="oval">-->
-            <!--<gradient-->
-                <!--android:angle="90"-->
-                <!--android:centerColor="#ABA40B"-->
-                <!--android:endColor="#ECE311"-->
-                <!--android:startColor="#686406"-->
-                <!--android:type="linear" />-->
-            <!--<size-->
-                <!--android:width="200dp"-->
-                <!--android:height="200dp" />-->
-            <!--<corners android:radius="30dp"/>-->
-        <!--</shape>-->
+    <!--<shape android:shape="oval">-->
+    <!--<gradient-->
+    <!--android:angle="90"-->
+    <!--android:centerColor="#ABA40B"-->
+    <!--android:endColor="#ECE311"-->
+    <!--android:startColor="#686406"-->
+    <!--android:type="linear" />-->
+    <!--<size-->
+    <!--android:width="200dp"-->
+    <!--android:height="200dp" />-->
+    <!--<corners android:radius="30dp"/>-->
+    <!--</shape>-->
     <!--</item>-->
 
 </layer-list>

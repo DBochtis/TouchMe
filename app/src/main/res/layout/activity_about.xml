@@ -13,8 +13,9 @@
 
         <ImageView
             android:id="@+id/backImgView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
             android:background="@mipmap/ic_arrow_back"/>
 
         <TextView
@@ -22,7 +23,6 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:textColor="@color/about_activity_primary_text"
-            android:textAllCaps="true"
             android:textSize="20sp"
             android:text="@string/about_activity_title"/>
 

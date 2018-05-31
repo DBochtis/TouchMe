@@ -20,7 +20,7 @@ import java.util.Random;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class Play2Activity extends AppCompatActivity implements View.OnClickListener{
+public class Play2Activity extends AppCompatActivity implements View.OnClickListener {
 
     private boolean allowed = false;
     private int counter = 0, players;
@@ -32,16 +32,25 @@ public class Play2Activity extends AppCompatActivity implements View.OnClickList
     RelativeLayout buttonRel2;
     @BindView(R.id.startRel)
     RelativeLayout startRel;
+
     @BindView(R.id.startTxtView)
     TextView startTxtView;
     @BindView(R.id.timeTxtView1)
     TextView timeTxtView1;
+    @BindView(R.id.timeTitleTxtView1)
+    TextView timeTitleTxtView1;
     @BindView(R.id.scoreTxtView1)
     TextView scoreTxtView1;
+    @BindView(R.id.scoreTitleTxtView1)
+    TextView scoreTitleTxtView1;
     @BindView(R.id.timeTxtView2)
     TextView timeTxtView2;
+    @BindView(R.id.timeTitleTxtView2)
+    TextView timeTitleTxtView2;
     @BindView(R.id.scoreTxtView2)
     TextView scoreTxtView2;
+    @BindView(R.id.scoreTitleTxtView2)
+    TextView scoreTitleTxtView2;
 
 
     @Override
@@ -54,8 +63,8 @@ public class Play2Activity extends AppCompatActivity implements View.OnClickList
     }
 
 
-    final int[] drawablearray = new int[]{R.drawable.red_button, R.drawable.red_button, R.drawable.red_button, R.drawable.red_button,
-            R.drawable.red_button, R.drawable.green_button, R.drawable.green_button, R.drawable.green_button, R.drawable.bonus_button};
+    final int[] drawablearray = new int[]{R.drawable.red_button_sml, R.drawable.red_button_sml, R.drawable.red_button_sml, R.drawable.red_button_sml,
+            R.drawable.red_button_sml, R.drawable.green_button_sml, R.drawable.green_button_sml, R.drawable.green_button_sml, R.drawable.bonus_button_sml};
 
     private void changeBackground(final int time) {
         if (allowed) {
@@ -71,8 +80,8 @@ public class Play2Activity extends AppCompatActivity implements View.OnClickList
     }
 
     private void changeBackgroundDrawable(int position) {
-        buttonRel1.setBackground(getDrawable(drawablearray[position]));
-        buttonRel2.setBackground(getDrawable(drawablearray[position]));
+        buttonRel1.setBackgroundDrawable(getResources().getDrawable(drawablearray[position]));
+        buttonRel2.setBackgroundDrawable(getResources().getDrawable(drawablearray[position]));
     }
 
     @Override
@@ -105,19 +114,19 @@ public class Play2Activity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    private void setButtonDrawable(Drawable drawable, TextView score){
-        Drawable green = getDrawable(R.drawable.green_button);
-        Drawable red = getDrawable(R.drawable.red_button);
-        Drawable bonus = getDrawable(R.drawable.bonus_button);
+    private void setButtonDrawable(Drawable drawable, TextView score) {
+        Drawable green = getResources().getDrawable(R.drawable.green_button_sml);
+        Drawable red = getResources().getDrawable(R.drawable.red_button_sml);
+        Drawable bonus = getResources().getDrawable(R.drawable.bonus_button_sml);
         if (areDrawablesIdentical(drawable, green)) {
             counter++;
-            score.setText(getResources().getString(R.string.play_activity_score) + " " + counter);
+            score.setText(String.valueOf(counter));
         } else if (areDrawablesIdentical(drawable, red)) {
             counter--;
-            score.setText(getResources().getString(R.string.play_activity_score) + " " + counter);
-        } else if (areDrawablesIdentical(drawable, bonus)){
+            score.setText(String.valueOf(counter));
+        } else if (areDrawablesIdentical(drawable, bonus)) {
             counter = counter + 5;
-            score.setText(getResources().getString(R.string.play_activity_score) + " " + counter);
+            score.setText(String.valueOf(counter));
         }
     }
 
@@ -153,28 +162,32 @@ public class Play2Activity extends AppCompatActivity implements View.OnClickList
         return result;
     }
 
-    private void setupViews(){
+    private void setupViews() {
         timeTxtView1.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
         timeTxtView2.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
+        timeTitleTxtView1.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
+        timeTitleTxtView2.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
         scoreTxtView1.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
         scoreTxtView2.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
+        scoreTitleTxtView1.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
+        scoreTitleTxtView2.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
         startTxtView.setTypeface(TypefacesHelper.get(this, TypefacesHelper.FONT_VR_R));
 
-        timeTxtView1.setText(getResources().getString(R.string.play_activity_time) + " " + 30 + "\"");
-        timeTxtView2.setText(getResources().getString(R.string.play_activity_time) + " " + 30 + "\"");
-        scoreTxtView1.setText(getResources().getString(R.string.play_activity_score) + " " + 0);
-        scoreTxtView2.setText(getResources().getString(R.string.play_activity_score) + " " + 0);
+        timeTxtView1.setText(30 + "\"");
+        timeTxtView2.setText(30 + "\"");
+        scoreTxtView1.setText("0");
+        scoreTxtView2.setText("0");
 
         timer = new CountDownTimer(30000, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                timeTxtView1.setText(getResources().getString(R.string.play_activity_time) + " " + millisUntilFinished / 1000 + "\"");
-                timeTxtView2.setText(getResources().getString(R.string.play_activity_time) + " " + millisUntilFinished / 1000 + "\"");
+                timeTxtView1.setText(millisUntilFinished / 1000 + "\"");
+                timeTxtView2.setText(millisUntilFinished / 1000 + "\"");
             }
 
             public void onFinish() {
-                timeTxtView1.setText(getResources().getString(R.string.play_activity_time) + " " + 0);
-                timeTxtView2.setText(getResources().getString(R.string.play_activity_time) + " " + 0);
+                timeTxtView1.setText("0");
+                timeTxtView2.setText("0");
                 allowed = false;
             }
 
